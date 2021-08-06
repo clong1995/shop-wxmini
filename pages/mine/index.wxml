@@ -1,0 +1,38 @@
+<view class="user">
+    <image class="avatar" src="{{user.avatar}}"/>
+    <view class="info">
+        <text class="nickname">{{user.nickname}}</text>
+        <text>ID: {{user.phone}}</text>
+    </view>
+    <view class="edit app-center">
+        <iconfont class="edit " icon="icon-bianji" fontSize="60rpx"/>
+        <button bindtap="getUserProfile"/>
+    </view>
+</view>
+<custom-title title="{{pageTitle.t1}}" padding="0 24rpx">
+    <iconfont slot="right-button" icon="icon-gengduo" color="var(--black45)" fontSize="36rpx"
+              bind:tap="navigateToOrder"/>
+</custom-title>
+<view class="grid">
+    <block wx:for="{{order}}" wx:key="index">
+        <view class="item" bind:tap="navigateToOrder" data-index="{{index}}">
+            <iconfont icon="{{item.icon}}" fontSize="52rpx"/>
+            <text>{{item.title}}</text>
+            <mp-badge wx:if="{{item.count > 0}}" content="{{item.count}}"/>
+        </view>
+    </block>
+</view>
+<custom-title title="{{pageTitle.t2}}" padding="0 24rpx"/>
+<view class="grid">
+    <block wx:for="{{func}}" wx:key="index">
+        <view class="item" bind:tap="navigateToFunc" data-index="{{index}}">
+            <iconfont icon="{{item.icon}}" fontSize="52rpx"/>
+            <text>{{item.title}}</text>
+            <mp-badge wx:if="{{item.count > 0}}" content="{{item.count}}"/>
+        </view>
+    </block>
+</view>
+<view class="brand">
+        <text class="title">—— {{pageTitle.t3}} ——</text>
+        <text class="sub">{{pageTitle.t4}}</text>
+</view>

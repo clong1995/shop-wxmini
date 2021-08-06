@@ -1,0 +1,101 @@
+page {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.user {
+    display: flex;
+    flex-direction: row;
+    padding: 28rpx 24rpx;
+    margin-bottom: 20rpx;
+    flex-shrink: 0;
+}
+
+.user > .avatar {
+    flex-shrink: 0;
+    width: 120rpx;
+    height: 120rpx;
+    border-radius: 50%;
+}
+
+.user > .info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    height: 120rpx;
+    justify-content: space-between;
+    padding: 16rpx 24rpx;
+}
+
+.user > .info > .nickname {
+    font-size: 32rpx;
+    font-weight: bold;
+}
+
+.user > .edit {
+    flex-shrink: 0;
+    position: relative;
+}
+
+.user > .edit > button {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+}
+
+.grid {
+    display: grid;
+    padding: 10rpx 24rpx 24rpx 24rpx;
+    grid-template-columns: repeat(4, 160rpx);
+    justify-content: space-between;
+    flex-shrink: 0;
+}
+
+.grid > .item {
+    background: var(--gray100);
+    height: 160rpx;
+    border-radius: 10rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 15rpx;
+    position: relative;
+}
+
+.grid > .item > iconfont,
+.grid > .item > text {
+    text-align: center;
+}
+
+.grid > .item > text {
+    padding-top: 10rpx;
+}
+
+.grid > .item > mp-badge {
+    position: absolute;
+    top: 5rpx;
+    right: 5rpx;
+}
+
+.brand {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #b5b5b5;
+    font-weight: lighter;
+}
+
+.brand > .title {
+    font-size: 30rpx;
+    padding: 20rpx 0;
+}
+
+.brand > .sub {
+    font-size: 22rpx;
+}

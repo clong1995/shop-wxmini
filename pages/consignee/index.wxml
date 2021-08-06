@@ -1,0 +1,27 @@
+<view class="container">
+    <view class="list">
+        <view wx:for="{{consignee_list}}" wx:if="{{item.id}}" wx:key="index" class="item" data-id="{{item.id}}" bind:tap="clickAddress">
+            <view class="icon">{{item.last}}</view>
+            <view class="content">
+                <view class="person">
+                    <text class="name">{{item.name}}</text>
+                    <text class="phone">{{item.phone}}</text>
+                </view>
+                <view class="addr">
+                    {{item.province}}
+                    {{item.city}}
+                    {{item.town}}
+                    {{item.address}}
+                </view>
+            </view>
+            <iconfont class="edit" icon="icon-bianji" color="#ccc" fontSize="40rpx" data-id="{{item.id}}"  catch:tap="clickEditAddress"/>
+            <iconfont class="default" wx:if="{{item.default}}" icon="icon-icon" color="var(--c1)" fontSize="60rpx"/>
+        </view>
+    </view>
+</view>
+<view class="footer">
+    <view class="button" bind:tap="clickAddAddress">
+        <iconfont icon="icon-weizhi1" color="white"/>
+        添加收件地址
+    </view>
+</view>

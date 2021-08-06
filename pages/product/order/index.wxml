@@ -1,0 +1,57 @@
+<view class="container">
+    <view class="address" bind:tap="clickAddress">
+        <iconfont class="icon" icon="icon-weizhi1" color="var(--c1)" fontSize="60rpx"/>
+        <view class="content">
+            <view>
+                <text class="name">{{consignee.name}}</text>
+                <text class="phone">{{consignee.phone}}</text>
+            </view>
+            <view class="addr">
+                {{consignee.province}} {{consignee.city}} {{consignee.town}} {{consignee.address}}
+            </view>
+        </view>
+        <iconfont icon="icon-bianji" color="#666" fontSize="40rpx"/>
+    </view>
+    <view class="content">
+        <view class="product">
+            <image mode="aspectFill" src="{{product.cover}}"/>
+            <view class="detail">
+                <view class="title">{{product.title}}</view>
+                <view class="prop">
+                    <block wx:for="{{product.prop_list}}" wx:key="index">
+                        {{item.group_title}}:{{item.title}};
+                    </block>
+                </view>
+            </view>
+            <text class="price">¥{{product.price / 100}}</text>
+        </view>
+        <view class="count">
+            <text class="title-s">购买数量</text>
+            <text>{{count}}</text>
+        </view>
+        <view class="delivery">
+            <view class="title-s">配送方式</view>
+            <text class="way">普通配送</text>
+            <view style="flex:1;"></view>
+            <text>快递 免费</text>
+        </view>
+        <view class="remark">
+            <text class="title-s">{{pageTitle.t1}}</text>
+            <textarea auto-height="true" placeholder="选填,请先和商家协商一致"/>
+        </view>
+    </view>
+    <view class="pay-way">
+        <view class="way">
+            <iconfont icon="icon-weixin1" color="#1ab20a" fontSize="40rpx"/>
+            <text>微信支付</text>
+        </view>
+        <iconfont icon="icon-xuanzhong3" color="var(--c1)" fontSize="40rpx"/>
+    </view>
+</view>
+<view class="footer">
+    <text class="count">共{{count}}件,</text>
+    <text class="text">合计:</text>
+    <text class="unit">¥</text>
+    <text class="price">{{total / 100}}</text>
+    <view class="button" bind:tap="clickSubmit">{{pageTitle.t2}}</view>
+</view>

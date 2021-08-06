@@ -1,0 +1,53 @@
+page {
+    padding: 20rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.line {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    border-bottom: 2rpx solid #eeeeee;
+    padding: 20rpx;
+    min-height: 100rpx;
+    align-items: center;
+}
+
+.line > .title {
+    width: 150rpx;
+    flex-shrink: 0;
+    font-weight: bold;
+    font-size: 30rpx;
+}
+
+.line > .content {
+    flex: 1;
+}
+
+.line > .switch {
+    flex-shrink: 0;
+}
+
+.save {
+    height: 70rpx;
+    line-height: 70rpx;
+    border-radius: 35rpx;
+    width: 50%;
+    text-align: center;
+    color: white;
+    background: var(--c1);
+    margin-top: 40rpx;
+}
+
+.delete {
+    height: 70rpx;
+    line-height: 70rpx;
+    border-radius: 35rpx;
+    width: 50%;
+    text-align: center;
+    color: red;
+    background: var(--gray100);
+    margin-top: 40rpx;
+}

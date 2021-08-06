@@ -1,0 +1,47 @@
+<view class="container">
+    <mp-tabs
+            tabs="{{classify_list}}"
+            activeTab="{{activeTab}}"
+            swiperClass="weui-tabs-swiper"
+            tab-class="tab-bar-title"
+            tab-inactive-text-color="#666666"
+            tab-underline-color="var(--c1)"
+            tab-active-text-color="var(--c1)"
+            bindchange="change"
+    >
+        <mp-tabs
+                wx:for="{{classify_list}}"
+                wx:key="index"
+                class="tab-content"
+                slot="tab-content-{{index}}"
+                tabs="{{item.child}}"
+                swiperClass="weui-tabs-swiper"
+                tab-class="tab-bar-child-title"
+                tab-inactive-text-color="#666666"
+                tab-active-text-color="var(--c1)"
+                bindchange="changeChild">
+            <view wx:for="{{item.child}}"
+                  wx:for-index="index1"
+                  wx:for-item="item1"
+                  wx:key="index"
+                  class="tab-content-view"
+                  slot="tab-content-{{index1}}">
+                <view class="inner"
+                      wx:for="{{item1.child}}"
+                      wx:for-item="item2"
+                      wx:key="index"
+                      data-id="{{item2.id}}"
+                      bind:tap="navigateToProduct">
+                    <image mode="aspectFill" src="{{item2.cover}}"/>
+                    <view class="content">
+                        <view class="title">{{item2.title}}</view>
+                        <view class="bottom">
+                            <text class="price">¥{{item2.price / 100}}</text>
+                            <text class="sell">已售0件</text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </mp-tabs>
+    </mp-tabs>
+</view>

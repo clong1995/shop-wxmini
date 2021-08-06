@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents": {
+    "custom-bar": "/components/custom-bar",
+    "iconfont": "/components/iconfont",
+    "spacer": "/components/spacer"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "",
+  "usingComponents": {
+    "custom-title": "/components/custom-title",
+    "iconfont": "/components/iconfont",
+    "mp-half-screen-dialog": "weui-miniprogram/half-screen-dialog/half-screen-dialog"
+  },
+  "disableScroll": true
+}

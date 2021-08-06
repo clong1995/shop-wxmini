@@ -1,0 +1,22 @@
+<scroll-view scroll-y="true" enable-flex="true">
+    <view class="block" wx:for="{{comment_list}}" wx:key="index">
+        <view class="head">
+            <image mode="aspectFill" src="{{item.avatar}}"/>
+            {{item.nickname}}
+        </view>
+        <view class="prop">
+            {{item.prop}}
+        </view>
+        <view class="content">
+            {{item.content}}
+        </view>
+        <view class="images">
+            <image
+                    wx:for="{{item.image_list}}"
+                    wx:key="index"
+                    wx:for-item="item1"
+                    mode="aspectFill"
+                    src="{{item1}}"/>
+        </view>
+    </view>
+</scroll-view>

@@ -1,0 +1,20 @@
+<custom-bar>
+    <view slot="left" class="left app-center">
+        <navigator class="page-foot" url="/pages/index/index" hover-class="none" openType="switchTab">
+            返回
+        </navigator>
+    </view>
+    <view slot="center" class="center">
+        <block wx:if="{{icon}}">
+            <iconfont icon="{{icon}}" color="{{color}}"/>
+            <spacer/>
+        </block>
+        <input type='text'
+               focus="true"
+               confirm-type="search"
+               placeholder="{{hint}}"
+               value="{{value}}"
+               bindconfirm="_confirm"
+        />
+    </view>
+</custom-bar>

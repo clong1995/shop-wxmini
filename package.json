@@ -1,0 +1,19 @@
+{
+  "name": "shop-wxmini",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://gitee.com/qingdao-juyi-youfu-network/gifts_wechat"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@miniprogram-component-plus/tabs": "^1.0.0",
+    "crypto-js": "^4.0.0"
+  }
+}

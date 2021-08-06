@@ -1,0 +1,34 @@
+<view class="line">
+    <text class="title">收件人</text>
+    <view class="content">
+        <input maxlength="4" placeholder="名字" value="{{name}}" bind:input="nameInput"/>
+    </view>
+</view>
+<view class="line">
+    <text class="title">手机号码</text>
+    <view class="content">
+        <input maxlength="11" type="number" placeholder="手机号" value="{{phone}}" bind:input="phoneInput"/>
+    </view>
+</view>
+<view class="line">
+    <text class="title">选择地区</text>
+    <picker class="content" mode="region" bindchange="pickerChange" value="{{region}}">
+        {{region[0] === "" ? "省" : region[0]}}
+        {{region[1] === "" ? "市" : region[1]}}
+        {{region[2] === "" ? "区/县" : region[2]}}
+    </picker>
+</view>
+<view class="line">
+    <text class="title">详细地址</text>
+    <view class="content">
+        <textarea auto-height="true" placeholder="小区 楼 栋 层 户 / 村乡 号" value="{{address}}" bind:input="addressInput"/>
+    </view>
+</view>
+<view class="line">
+    <text class="title">默认地址</text>
+    <view class="content">
+    </view>
+    <switch checked="{{checked}}" bind:change="bindCheck"/>
+</view>
+<view class="save" bind:tap="clickSave">保存</view>
+<view class="delete" bind:tap="clickDelete">删除</view>

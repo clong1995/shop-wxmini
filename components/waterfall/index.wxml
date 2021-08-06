@@ -1,0 +1,12 @@
+<view class="container">
+    <view class="left" style="padding-right:{{gap}}rpx">
+        <view class="item" wx:for="{{left.list}}" wx:key="index" style="padding-bottom:{{gap* 2}}rpx">
+            <slot name="item-{{item.id}}"></slot>
+        </view>
+    </view>
+    <view class="right" style="padding-left:{{gap}}rpx">
+        <view class="item" wx:for="{{right.list}}" wx:key="index" style="padding-bottom:{{gap* 2}}rpx">
+            <slot name="item-{{item.id}}"></slot>
+        </view>
+    </view>
+</view>

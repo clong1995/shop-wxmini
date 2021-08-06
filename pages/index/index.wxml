@@ -1,0 +1,61 @@
+<!--search-bar-->
+<search-bar
+        hint="{{search_word}}"
+        icon="icon-icon-search"
+        bind:onclick="navigateToSearch"
+>
+    <view class="user app-center" slot="left" bind:tap="navigateToMine">
+        <view class="avatar">
+            <image mode="heightFix" src="{{avatar === ''?'/assets/images/avatar.png':avatar}}"/>
+        </view>
+        <text class="nickName">{{nickname === "" ? "登入" : nickname}}</text>
+    </view>
+</search-bar>
+<scroll-view
+        scroll-y="true">
+    <!--swiper-->
+    <swiper
+            autoplay="{{autoplay}}"
+            circular="true"
+            indicator-dots="true"
+            previous-margin="60rpx"
+            next-margin="60rpx"
+    >
+        <block wx:for="{{banner_list}}" wx:key="index">
+            <swiper-item data-index="{{index}}" bind:tap="navigateToWebview">
+                <image mode="aspectFill" src="{{item.image}}"/>
+            </swiper-item>
+        </block>
+    </swiper>
+    <!--padding-->
+    <view class="app-padding">
+        <!--custom-title-->
+        <custom-title title="{{pageTitle.t1}}">
+            <iconfont slot="right-button" icon="icon-gengduo" color="var(--black45)" fontSize="36rpx"
+                      bind:tap="navigateToClassify"/>
+        </custom-title>
+        <view class="classify">
+            <block wx:for="{{classify_list}}" wx:key="index">
+                <view class="item" bind:tap="navigateToClassify" data-id="{{item.id}}">
+                    <image mode="aspectFill" src="{{item.image}}"/>
+                    <text>{{item.title}}</text>
+                </view>
+            </block>
+        </view>
+        <!--custom-title-->
+        <custom-title title="{{pageTitle.t2}}" padding="0 0 20rpx 0"/>
+        <!--waterfall-->
+        <waterfall list="{{product_list}}">
+            <block wx:for="{{product_list}}" wx:key="index">
+                <view class="item" slot="item-{{item.id}}" data-id="{{item.id}}" bind:tap="navigateToProduct">
+                    <image mode="widthFix" src="{{item.cover}}"/>
+                    <view class="content">{{item.title}}</view>
+                    <view class="bottom">
+                        <text class="price">¥{{item.price / 100}}</text>
+                        <text class="sell">已售0件</text>
+                    </view>
+                </view>
+            </block>
+        </waterfall>
+    </view>
+</scroll-view>

@@ -1,0 +1,177 @@
+page {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.container {
+    flex: 1;
+    padding: 20rpx;
+}
+
+.container > .address {
+    padding: 20rpx;
+    background: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-radius: 20rpx;
+    margin-bottom: 20rpx;
+}
+
+.container > .address > .icon {
+    margin: 0 16rpx;
+}
+
+.container > .address > .content {
+    flex: 1;
+    padding: 0 20rpx;
+}
+
+.container > .address > .content .name {
+    font-size: 30rpx;
+    margin-right: 20rpx;
+}
+
+.container > .address > .content .phone {
+    color: #666;
+}
+
+.container > .content {
+    background: white;
+    border-radius: 20rpx;
+    padding: 20rpx;
+    margin-bottom: 20rpx;
+}
+
+.container > .content .title-s {
+    width: 150rpx;
+    text-align: right;
+}
+
+.container > .content > .product {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20rpx;
+}
+
+.container > .content > .product > image {
+    width: 150rpx;
+    height: 140rpx;
+    flex-shrink: 0;
+    border-radius: 6rpx;
+}
+
+.container > .content > .product > .detail {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 0 26rpx;
+}
+
+.container > .content > .product > .detail > .title {
+    margin-bottom: 10rpx;
+}
+
+.container > .content > .product > .detail > .prop {
+    color: #666;
+}
+
+.container > .content > .product > .price {
+    font-size: 28rpx;
+}
+
+.container > .content > .count,
+.container > .content > .delivery {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 20rpx 20rpx 0 0;
+}
+
+.container > .content > .count {
+    justify-content: space-between;
+}
+
+.container > .content > .delivery .way {
+    color: #999;
+    margin-left: 20rpx;
+}
+
+.container > .content > .remark {
+    display: flex;
+    flex-direction: row;
+    padding: 20rpx 20rpx 0 0;
+}
+
+.container > .content > .remark > text {
+    flex-shrink: 0;
+}
+
+.container > .content > .remark > textarea {
+    flex: 1;
+    margin-left: 20rpx;
+    background: #fafafa;
+    border-radius: 4rpx;
+    padding: 10rpx;
+}
+
+.container > .pay-way {
+    background: white;
+    border-radius: 20rpx;
+    padding: 20rpx;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.container > .pay-way > .way {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.container > .pay-way > .way > iconfont {
+    margin-right: 10rpx;
+}
+
+.footer {
+    flex-shrink: 0;
+    background: white;
+    padding: 20rpx 20rpx env(safe-area-inset-bottom) 20rpx;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.footer > .count {
+    color: #666;
+    margin-right: 16rpx;
+}
+
+.footer > .text {
+    font-size: 28rpx;
+    margin-right: 10rpx;
+}
+
+.footer > .unit {
+    color: var(--c1);
+}
+
+.footer > .price {
+    font-size: 34rpx;
+    color: var(--c1);
+    margin-right: 20rpx;
+}
+
+.footer > .button {
+    height: 70rpx;
+    line-height: 70rpx;
+    border-radius: 35rpx;
+    width: 200rpx;
+    text-align: center;
+    color: white;
+    background: var(--c1);
+}

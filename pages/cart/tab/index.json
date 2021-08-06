@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "",
+  "usingComponents": {
+    "cart": "../base"
+  },
+  "disableScroll":true
+}

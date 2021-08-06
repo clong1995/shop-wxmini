@@ -1,0 +1,10 @@
+{
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "search-bar": "/components/search-bar",
+    "custom-title": "/components/custom-title",
+    "iconfont": "/components/iconfont",
+    "waterfall": "/components/waterfall"
+  },
+  "disableScroll":true
+}

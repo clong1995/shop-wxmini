@@ -1,0 +1,14 @@
+<scroll-view scroll-y="true">
+    <block wx:for="{{product_list}}" wx:key="index">
+        <view class="line" data-id="{{item.id}}" bind:tap="navigateToProduct">
+            <image mode="aspectFill" src="{{item.cover}}"/>
+            <view class="content">
+                <view class="title">{{item.title}}</view>
+                <view class="bottom">
+                    <text class="price">¥{{item.price / 100}}</text>
+                    <text class="sell">已售0件</text>
+                </view>
+            </view>
+        </view>
+    </block>
+</scroll-view>

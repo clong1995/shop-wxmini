@@ -1,0 +1,4 @@
+<view class="container" style="padding:{{padding}}">
+    <text style="color:{{color}}">{{title}}</text>
+    <slot name="right-button"></slot>
+</view>

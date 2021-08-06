@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "",
+  "usingComponents": {
+    "iconfont": "/components/iconfont"
+  },
+  "disableScroll":true
+}

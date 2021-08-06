@@ -1,0 +1,97 @@
+page, .container {
+    height: 100%;
+}
+
+.tab-bar-title {
+    font-size: 32rpx;
+}
+
+.tab-bar-child-title {
+    font-size: 28rpx;
+    border-bottom-width: 0 !important;
+}
+
+.tab-content {
+    height: 100%;
+}
+
+.tab-content-view {
+    height: 100%;
+    overflow-y: auto;
+}
+
+/*weui-tabs*/
+.weui-tabs {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.weui-tabs > .weui-tabs-bar__wrp {
+    flex-shrink: 0;
+}
+
+.weui-tabs > .weui-tabs-bar__wrp .weui-tabs-bar__content > .weui-tabs-bar__item {
+    padding: 0 20rpx;
+}
+
+.weui-tabs > .weui-tabs-bar__wrp .weui-tabs-bar__content > .weui-tabs-bar__item > .weui-tabs-bar__title {
+    padding: 10rpx 0;
+}
+
+.weui-tabs > .weui-tabs-swiper {
+    flex: 1;
+    /*background: red;*/
+}
+
+
+.inner {
+    display: flex;
+    flex-direction: row;
+    background: white;
+    margin: 16rpx 24rpx;
+    padding: 16rpx;
+    border-radius: 10rpx;
+}
+
+.inner > image {
+    width: 200rpx;
+    height: 200rpx;
+    border-radius: 10rpx;
+    margin-right: 24rpx;
+}
+
+.inner > .content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    height: 200rpx;
+}
+
+.inner > .content > .title {
+    flex: 1;
+    font-size: 28rpx;
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-all;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+}
+
+.inner > .content > .bottom {
+    height: 74rpx;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.inner > .content > .bottom > .price {
+    font-size: 32rpx;
+    color: var(--c4);
+}
+
+.inner > .content > .bottom > .sell {
+
+}

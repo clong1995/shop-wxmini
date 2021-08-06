@@ -1,0 +1,13 @@
+<view class="container">
+    <view class="title">
+        <image mode="heightFix" src="/assets/images/logo.png"/>
+        <text>礼物吧</text>
+    </view>
+    <view class="content">
+        <view class="phone-box">
+            <text>{{phone}}</text>
+            <button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">button</button>
+        </view>
+        <button type="default" bind:tap="onSendCodeClick">登入</button>
+    </view>
+</view>

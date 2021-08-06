@@ -1,0 +1,9 @@
+{
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "input-search-bar": "/components/input-search-bar",
+    "custom-title": "/components/custom-title",
+    "iconfont": "/components/iconfont"
+  },
+  "disableScroll":true
+}

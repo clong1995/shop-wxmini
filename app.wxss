@@ -1,0 +1,36 @@
+/**app.wxss**/
+page {
+    --c1: #FF6E00;
+    --c2: #333333;
+    --c4: #FF5252;
+    --gray100: #F5F5F5;
+    --black12: rgba(0, 0, 0, .12);
+    --black45: rgba(0, 0, 0, .45);
+    font-size: small;
+    color: #333333;
+    background: #fafafa;
+}
+
+view, scroll-view {
+    box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.app-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.app-padding {
+    padding: 0 24rpx;
+}
+
+.app-disable {
+    filter: grayscale(100%);
+    opacity: .3;
+    pointer-events: none;
+}

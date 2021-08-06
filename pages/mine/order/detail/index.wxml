@@ -1,0 +1,97 @@
+<view class="container">
+    <view class="state">
+        订单状态: {{state_title}}
+    </view>
+    <view class="address">
+        <iconfont class="icon" icon="icon-weizhi1" color="var(--c1)" fontSize="60rpx"/>
+        <view class="content">
+            <view>
+                <text class="name">{{name}}</text>
+                <text class="phone">{{phone}}</text>
+            </view>
+            <view class="addr">
+                {{province}} {{city}} {{town}} {{address}}
+            </view>
+        </view>
+    </view>
+    <view class="content">
+        <view class="product">
+            <image mode="aspectFill" src="{{cover}}"/>
+            <view class="detail">
+                <view class="title">{{title}}</view>
+                <view class="prop">
+                    {{prop}}
+                </view>
+            </view>
+            <text class="price">¥{{price / 100}}</text>
+        </view>
+        <view class="count">
+            <text class="title-s">购买数量</text>
+            <text>{{count}}</text>
+        </view>
+        <view class="delivery">
+            <view class="title-s">配送方式</view>
+            <text class="way">普通配送</text>
+            <view style="flex:1;"></view>
+            <text>快递 免费</text>
+        </view>
+        <view class="remark">
+            <text class="title-s">订单备注</text>
+            <text class="textarea">{{remark}}</text>
+        </view>
+        <view class="total">
+            <text class="title-s">总计</text>
+            <text class="textarea">¥{{(count * price) / 100}}</text>
+        </view>
+    </view>
+    <view class="pay-way">
+        <view class="way">
+            <iconfont icon="icon-weixin1" color="#1ab20a" fontSize="40rpx"/>
+            <text>微信支付</text>
+        </view>
+        <iconfont icon="icon-xuanzhong3" color="var(--c1)" fontSize="40rpx"/>
+    </view>
+    <block wx:if="{{state === 1}}">
+        <view class="pay-button" bind:tap="clickPayButton">
+            继续支付
+        </view>
+        <view class="cancel-button" bind:tap="clickRemove">
+            取消订单
+        </view>
+    </block>
+    <view class="detail">
+        <view class="line">
+            <text class="title">订单编号:</text>
+            <text>{{id}}</text>
+        </view>
+        <view class="line">
+            <text class="title">订单快照:</text>
+            <text class="snapshoot" bind:tap="navigateToSnapshoot">核对交易细节时,可作为判断依据</text>
+            <iconfont icon="icon-kuaizhao" color="#666"/>
+        </view>
+        <view class="line">
+            <text class="title">物流公司:</text>
+            <text>{{express_company || "暂无"}}</text>
+        </view>
+        <view class="line">
+            <text class="title">快递单号:</text>
+            <text>{{express_number || "暂无"}}</text>
+        </view>
+        <view class="line">
+            <text class="title">下单时间:</text>
+            <text>{{create_date}}</text>
+        </view>
+        <view class="line">
+            <text class="title">支付时间:</text>
+            <text>{{pay_date || "未支付"}}</text>
+        </view>
+        <view class="line">
+            <text class="title">发货时间:</text>
+            <text>{{delivery_date || "未发货"}}</text>
+        </view>
+        <view class="line">
+            <text class="title">签收时间:</text>
+            <text>{{receive_date || "未签收"}}</text>
+        </view>
+    </view>
+</view>

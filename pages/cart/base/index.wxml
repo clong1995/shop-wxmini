@@ -1,0 +1,26 @@
+<view class="container">
+    <block wx:for="{{list}}" wx:key="index">
+        <view class="line"
+              wx:if="{{item.id}}">
+            <mp-slideview
+                    icon="{{true}}"
+                    data-id="{{item.id}}"
+                    buttons="{{slideButtons}}"
+                    bindbuttontap="slideButtonTap"
+            >
+                <view class="inner" data-id="{{item.id}}" bind:tap="navigateToProduct">
+                    <image mode="aspectFill" src="{{item.cover}}"/>
+                    <view class="content">
+                        <view class="title">{{item.title}}</view>
+                        <view class="bottom">
+                            <text class="price">¥{{item.price / 100}}</text>
+                            <view class="button" data-id="{{item.id}}" catch:tap="navigateToPurchase">
+                                结算
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </mp-slideview>
+        </view>
+    </block>
+</view>

@@ -1,0 +1,224 @@
+page > scroll-view {
+    width: 100%;
+    height: calc(100% - 150rpx);
+    position: absolute;
+    top: 0;
+    z-index: 1;
+}
+
+/*swiper*/
+swiper {
+    width: 100%;
+    height: 600rpx;
+}
+
+swiper image {
+    width: 100%;
+    height: 100%;
+}
+
+/*info*/
+.info {
+    background: white;
+    padding: 24rpx;
+    display: flex;
+    flex-direction: column;
+}
+
+.info > .price-box {
+    display: flex;
+    flex-direction: row;
+    color: var(--c4);
+    align-items: center;
+}
+
+.info > .price-box > .sale {
+    font-size: 38rpx;
+    font-weight: bold;
+}
+
+.info > .price-box > .price {
+    background: var(--c4);
+    color: white;
+    padding: 4rpx 14rpx;
+    border-radius: 6rpx;
+    margin-left: 20rpx;
+}
+
+.info > .title {
+    padding-top: 16rpx;
+    font-size: 30rpx;
+    line-height: 40rpx;
+}
+
+.detail {
+    display: flex;
+    flex-direction: column;
+}
+
+.detail > .title {
+    text-align: center;
+    font-size: 30rpx;
+    font-weight: bold;
+    margin: 20rpx 0;
+}
+
+.detail > image {
+    width: 100%;
+}
+
+/*foot*/
+.foot {
+    width: 100%;
+    height: 150rpx;
+    background: white;
+    position: absolute;
+    bottom: 0;
+    z-index: 2;
+    display: flex;
+    flex-direction: row;
+    padding: 24rpx 32rpx 0 32rpx;
+}
+
+.foot > .talk {
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+}
+
+.foot > .talk > text {
+    font-size: 22rpx;
+}
+
+.foot > .space {
+    flex: 1;
+}
+
+.foot > .button {
+    flex-shrink: 0;
+    height: 70rpx;
+    border-radius: 35rpx;
+    line-height: 70rpx;
+    padding: 0 35rpx;
+    background: red;
+    color: white;
+    margin-left: 20rpx;
+}
+
+.half-screen {
+    height: 75%;
+    display: flex;
+    flex-direction: column;
+}
+
+.half-screen > .weui-half-screen-dialog__hd {
+    flex-shrink: 0;
+}
+
+.half-screen > .weui-half-screen-dialog__bd,
+.half-screen > .weui-half-screen-dialog__ft {
+    padding: 0;
+}
+
+.half-screen > .weui-half-screen-dialog__ft {
+    flex: 1;
+    overflow: hidden;
+}
+
+.half-screen .container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.half-screen .container > .line {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-shrink: 0;
+    margin-bottom: 20rpx;
+}
+
+.half-screen .container > .line > .final {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.half-screen .container > .line > .final > .price {
+    color: var(--c4);
+    font-size: 40rpx;
+}
+
+.half-screen .container > .line > .final > .selected {
+    font-size: 30rpx;
+    margin-top: 10rpx;
+}
+
+
+.half-screen .container > .line > .count-box {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.half-screen .container > .line > .count-box > text {
+    font-size: 36rpx;
+    padding: 0 20rpx;
+}
+
+
+.half-screen .container > .content {
+    height: 100%;
+    overflow-y: auto;
+    flex: 1;
+}
+
+
+.half-screen .container > .content > .title {
+    font-size: 28rpx;
+    text-align: left;
+    font-weight: bold;
+}
+
+.half-screen .container > .content > .scroll {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20rpx;
+    margin: 20rpx 0;
+}
+
+.half-screen .container > .content > .scroll > .prop {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10rpx;
+    flex-shrink: 0;
+    /*width: 200rpx;*/
+    max-height: 240rpx;
+    background: var(--gray100);
+}
+.half-screen .container > .content > .scroll > .prop.selected{
+    border: 2rpx solid var(--c1);
+    color:var(--c1);
+}
+
+.half-screen .container > .content > .scroll > .prop > image {
+    width: 100%;
+    flex: 1;
+}
+
+.half-screen .container > .content > .scroll > .prop > text {
+    flex-shrink: 0;
+    padding: 10rpx;
+}
+
+.half-screen .container > .submit {
+    height: 80rpx;
+    line-height: 80rpx;
+    margin: 20rpx 20rpx 0 20rpx;
+    background: var(--gray100);
+    border-radius: 40rpx;
+    font-weight: bold;
+    flex-shrink: 0;
+}

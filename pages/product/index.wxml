@@ -1,0 +1,114 @@
+<custom-bar background="transparent">
+    <navigator slot="left" class="left app-center" hover-class="none" openType="navigateBack">
+        <image mode="heightFix" src="/assets/icons/fanhui.png"/>
+    </navigator>
+</custom-bar>
+<scroll-view
+        scroll-y="true">
+    <swiper
+            circular="true"
+            indicator-dots="true"
+    >
+        <block wx:for="{{banner_list}}" wx:key="index">
+            <swiper-item data-index="{{index}}">
+                <image mode="aspectFill" src="{{item}}"/>
+            </swiper-item>
+        </block>
+    </swiper>
+    <view class="info">
+        <view class="price-box">
+            <text>¥</text>
+            <block wx:if="{{sale > price}}">
+                <text class="sale">{{sale / 100}}</text>
+                <view class="price">{{pageTitle.t5}} ¥{{price / 100}}</view>
+            </block>
+            <block wx:else>
+                <text class="sale">{{price / 100}}</text>
+            </block>
+        </view>
+        <text class="title">{{title}}</text>
+    </view>
+    <view class="comment" wx:if="{{comment_list.length >0}}">
+        <custom-title title="{{pageTitle.t1}}">
+            <iconfont slot="right-button" icon="icon-gengduo" color="var(--black45)" fontSize="36rpx"
+                      bind:tap="navigateToComment"/>
+        </custom-title>
+        <view class="comment-content">
+            <block wx:for="{{comment_list}}" wx:key="index">
+                <view class="item">
+                    <image mode="aspectFill" src="{{item.image}}"/>
+                    <text>{{item.content}}</text>
+                </view>
+            </block>
+        </view>
+    </view>
+    <view class="detail">
+        <view class="title">{{pageTitle.t2}}</view>
+        <block wx:for="{{detail_list}}" wx:key="index">
+            <image mode="widthFix" src="{{item}}"/>
+        </block>
+    </view>
+    <view class="recommend">
+        <view class="title">{{pageTitle.t3}}</view>
+        <waterfall list="{{recommend_list}}" itemHeight="540rpx">
+            <block wx:for="{{recommend_list}}" wx:key="index">
+                <view class="item" slot="item-{{item.id}}" data-id="{{item.id}}" bind:tap="navigateToProduct">
+                    <image mode="widthFix" src="{{item.cover}}"/>
+                    <view class="content">{{item.title}}</view>
+                    <view class="bottom">
+                        <text class="price">¥{{item.price / 100}}</text>
+                        <text class="sell">已售0件</text>
+                    </view>
+                </view>
+            </block>
+        </waterfall>
+    </view>
+</scroll-view>
+<view class="foot">
+    <view class="talk" bind:tap="clickTalk">
+        <iconfont icon="icon-liaotian" fontSize="40rpx"/>
+        <text>客服</text>
+    </view>
+    <view class="space"></view>
+    <view class="button {{in_cart?'app-disable':''}}" style="background:orange;" bind:tap="clickAddCart">
+        {{in_cart ? '存在' : '加入'}}购物车
+    </view>
+    <view class="button" bindtap="open">¥{{price / 100}} 立即购买</view>
+</view>
+<mp-half-screen-dialog
+        extClass="half-screen"
+        show="{{show}}"
+        title="{{pageTitle.t4}}"
+>
+    <view class="container" slot="footer">
+        <view class="line">
+            <view class="final">
+                <view class="price">¥{{total / 100}}</view>
+                <view class="selected">已选择: {{selected}}</view>
+            </view>
+            <view style="flex:1;"></view>
+            <view class="count-box">
+                <iconfont icon="icon-jian" fontSize="44rpx" color="#999" bind:tap="clickMinusCount"/>
+                <text>{{count}}</text>
+                <iconfont icon="icon-jia" fontSize="44rpx" color="#999" bind:tap="clickPlusCount"/>
+            </view>
+        </view>
+        <view class="content">
+            <block wx:for="{{prop_list}}" wx:key="index">
+                <view class="title">{{item.group_title}}</view>
+                <view class="scroll">
+                    <block wx:for="{{item.item_list}}" wx:key="index" wx:for-item="item1">
+                        <view class="prop {{item1.selected?'selected':''}}" data-id="{{item1.id}}"
+                              bind:tap="clickProp">
+                            <image wx:if="{{item1.image}}" mode="aspectFill" src="{{item1.image}}"/>
+                            <text>{{item1.title}}</text>
+                        </view>
+                    </block>
+                </view>
+            </block>
+        </view>
+        <view class="submit" bind:tap="submit">
+            确认购买
+        </view>
+    </view>
+</mp-half-screen-dialog>

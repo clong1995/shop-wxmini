@@ -1,0 +1,58 @@
+<view class="container">
+    <mp-tabs
+            tabs="{{order_list}}"
+            activeTab="{{activeTab}}"
+            swiperClass="weui-tabs-swiper"
+            tab-class="tab-bar-title"
+            tab-inactive-text-color="#666666"
+            tab-active-text-color="var(--c1)"
+            bindchange="change">
+        <view wx:for="{{order_list}}"
+              wx:for-index="index"
+              wx:for-item="item"
+              wx:key="index"
+              class="tab-content-view"
+              slot="tab-content-{{index}}">
+            <view class="inner"
+                  wx:for="{{item.child}}"
+                  wx:for-item="item1"
+                  wx:for-index="index1"
+                  wx:key="index"
+                  wx:if="{{item1.id}}"
+            >
+                <image mode="aspectFill" src="{{item1.cover}}"/>
+                <view class="content">
+                    <view class="title">{{item1.title}}</view>
+                    <view class="prop">{{item1.prop}}</view>
+                    <view style="flex:1;"></view>
+                    <view class="price">共 {{item1.count}} 件,实付: ¥{{item1.price * item1.count / 100}}</view>
+                    <view class="buttons">
+                        <text class="detail" data-id="{{item1.id}}" bind:tap="clickDetail">详情</text>
+                        <block wx:if="{{order_list[index].id===3}}">
+                            <!--待收货-->
+                            <text class="delivery">物流</text>
+                            <text class="receive">确认收货</text>
+                        </block>
+                        <block wx:elif="{{order_list[index].id===1}}">
+                            <!--待付款-->
+                            <text class="pay" data-id="{{item1.id}}" bind:tap="clickPayButton">付款</text>
+                        </block>
+                        <block wx:elif="{{order_list[index].id===4}}">
+                            <!--待评价-->
+                            <text class="comment">去评价</text>
+                        </block>
+                        <block wx:elif="{{order_list[index].id===2}}">
+                            <!--待发货-->
+                        </block>
+                        <block wx:elif="{{order_list[index].id===5}}">
+                            <!--售后/退款-->
+                        </block>
+                        <block wx:elif="{{order_list[index].id===6}}">
+                            <!--已完成-->
+                        </block>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </mp-tabs>
+</view>

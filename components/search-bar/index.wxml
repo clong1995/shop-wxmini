@@ -1,0 +1,14 @@
+<custom-bar>
+    <view slot="left" class="left app-center">
+        <slot name="left"></slot>
+    </view>
+    <view slot="center" class="center app-center" bind:tap="navigatorTo" hover-class="none">
+        <block wx:if="{{icon}}">
+            <iconfont icon="{{icon}}" color="{{color}}"/>
+            <spacer/>
+        </block>
+        <block wx:if="{{hint}}">
+            <text style="color:{{color}}">{{hint}}</text>
+        </block>
+    </view>
+</custom-bar>

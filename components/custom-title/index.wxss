@@ -1,0 +1,12 @@
+.container{
+    display: flex;
+    flex-direction: row;
+    height: 70rpx;
+    align-items: center;
+    flex-shrink: 0;
+}
+.container > text{
+    font-size: 30rpx;
+    font-weight: bold;
+    flex: 1;
+}

@@ -1,0 +1,11 @@
+{
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "custom-bar": "/components/custom-bar",
+    "custom-title": "/components/custom-title",
+    "iconfont": "/components/iconfont",
+    "waterfall": "/components/waterfall",
+    "mp-half-screen-dialog": "weui-miniprogram/half-screen-dialog/half-screen-dialog"
+  },
+  "disableScroll": true
+}

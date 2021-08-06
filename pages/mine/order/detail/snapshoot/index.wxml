@@ -1,0 +1,72 @@
+<scroll-view
+        scroll-y="true">
+    <swiper
+            circular="true"
+            indicator-dots="true"
+    >
+        <block wx:for="{{banner_list}}" wx:key="index">
+            <swiper-item data-index="{{index}}">
+                <image mode="aspectFill" src="{{item}}"/>
+            </swiper-item>
+        </block>
+    </swiper>
+    <view class="info">
+        <view class="price-box">
+            <text>¥</text>
+            <block wx:if="{{sale > price}}">
+                <text class="sale">{{sale / 100}}</text>
+                <view class="price">{{pageTitle.t2}} ¥{{price / 100}}</view>
+            </block>
+            <block wx:else>
+                <text class="sale">{{price / 100}}</text>
+            </block>
+        </view>
+        <text class="title">{{title}}</text>
+    </view>
+    <view class="detail">
+        <view class="title">{{pageTitle.t1}}</view>
+        <block wx:for="{{detail_list}}" wx:key="index">
+            <image mode="widthFix" src="{{item}}"/>
+        </block>
+    </view>
+</scroll-view>
+<view class="foot">
+    <view class="space"></view>
+    <view class="button" bindtap="open">¥{{total * count / 100}} {{pageTitle.t3}}</view>
+</view>
+<mp-half-screen-dialog
+        extClass="half-screen"
+        show="{{show}}"
+        title="{{pageTitle.t4}}"
+>
+    <view class="container" slot="footer">
+        <view class="line">
+            <view class="final">
+                <view class="price">¥{{total / 100}}</view>
+                <view class="selected">已选择: {{selected}}</view>
+            </view>
+            <view style="flex:1;"></view>
+            <view class="count-box">
+                <iconfont icon="icon-jian" fontSize="44rpx" color="#e5e5e5"/>
+                <text>{{count}}</text>
+                <iconfont icon="icon-jia" fontSize="44rpx" color="#e5e5e5"/>
+            </view>
+        </view>
+        <view class="content">
+            <block wx:for="{{prop_list}}" wx:key="index">
+                <view class="title">{{item.group_title}}</view>
+                <view class="scroll">
+                    <block wx:for="{{item.item_list}}" wx:key="index" wx:for-item="item1">
+                        <view class="prop {{item1.selected?'selected':''}}" data-id="{{item1.id}}">
+                            <image wx:if="{{item1.image}}" mode="aspectFill" src="{{item1.image}}"/>
+                            <text>{{item1.title}}</text>
+                        </view>
+                    </block>
+                </view>
+            </block>
+        </view>
+        <view class="submit">
+            合计: ¥ {{total * count / 100}}
+        </view>
+    </view>
+</mp-half-screen-dialog>

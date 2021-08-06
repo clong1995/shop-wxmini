@@ -1,0 +1,29 @@
+<!--search-bar-->
+<input-search-bar
+        value="{{search_word}}"
+        icon="icon-icon-search"
+        bindconfirm='confirm'
+>
+</input-search-bar>
+<view class="app-padding">
+    <custom-title title="{{pageTitle.t1}}">
+        <iconfont slot="right-button" icon="icon-RectangleCopy" color="var(--black45)" fontSize="36rpx"
+                  bind:tap="clickRemoveHistory"/>
+    </custom-title>
+    <view class="history">
+        <block wx:for="{{history_list}}" wx:key="index">
+                <text data-value="{{item}}" bind:tap="clickSearchWord" wx:if="{{item !== ''}}">{{item}}</text>
+        </block>
+    </view>
+    <custom-title title="{{pageTitle.t2}}"/>
+    <view class="find">
+        <block wx:for="{{find_list}}" wx:key="index">
+            <text data-value="{{item}}" bind:tap="clickFind" >{{item}}</text>
+        </block>
+    </view>
+    <!--
+    <custom-title title="推荐">
+        <iconfont slot="right-button" icon="icon-gengduo" color="var(&#45;&#45;black45)" fontSize="38rpx"/>
+    </custom-title>
+    -->
+</view>

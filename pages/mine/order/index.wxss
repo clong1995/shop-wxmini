@@ -1,0 +1,92 @@
+page, .container {
+    height: 100%;
+}
+
+.tab-bar-title {
+    border-bottom-width: 0 !important;
+    font-size: 26rpx;
+}
+
+.tab-content-view {
+    height: 100%;
+    overflow-y: auto;
+}
+
+/*weui-tabs*/
+.weui-tabs {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.weui-tabs > .weui-tabs-bar__wrp {
+    flex-shrink: 0;
+}
+
+.weui-tabs > .weui-tabs-bar__wrp .weui-tabs-bar__content > .weui-tabs-bar__item {
+    padding: 0 20rpx;
+}
+
+.weui-tabs > .weui-tabs-bar__wrp .weui-tabs-bar__content > .weui-tabs-bar__item > .weui-tabs-bar__title {
+    padding: 10rpx 0;
+}
+
+.weui-tabs > .weui-tabs-swiper {
+    flex: 1;
+    /*background: red;*/
+}
+
+
+.inner {
+    display: flex;
+    flex-direction: row;
+    background: white;
+    margin: 16rpx 24rpx;
+    padding: 16rpx;
+    border-radius: 10rpx;
+}
+
+.inner > image {
+    width: 240rpx;
+    height: 240rpx;
+    flex-shrink: 0;
+}
+
+.inner > .content {
+    margin-left: 20rpx;
+    display: flex;
+    flex-direction: column;
+}
+
+.inner > .content >.prop{
+    margin-top: 10rpx;
+    color:#666;
+}
+
+.inner > .content >.price{
+    text-align: right;
+}
+.inner > .content >.buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-top: 10rpx;
+}
+
+.inner > .content >.buttons >text{
+    margin-left: 20rpx;
+    padding: 0 20rpx;
+    height: 50rpx;
+    line-height: 50rpx;
+    border-radius: 4rpx;
+}
+.inner > .content >.buttons >.delivery{
+    border: 2rpx solid #ccc;
+}
+
+.inner > .content >.buttons >.receive,
+.inner > .content >.buttons >.comment,
+.inner > .content >.buttons >.pay{
+    background: var(--c1);
+    color:white;
+}

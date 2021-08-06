@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "iconfont": "/components/iconfont",
+    "mp-slideview": "weui-miniprogram/slideview/slideview"
+  }
+}

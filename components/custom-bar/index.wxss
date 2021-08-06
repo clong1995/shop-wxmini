@@ -1,0 +1,11 @@
+.container {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+.container >.left{
+    flex-shrink: 0;
+}
+.container >.center{
+    flex: 1;
+}

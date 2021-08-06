@@ -1,0 +1,194 @@
+page {
+    padding: 20rpx 20rpx env(safe-area-inset-bottom) 20rpx;
+    box-sizing: border-box;
+    height: 100%;
+}
+
+.container {
+    height: 100%;
+    overflow-y: auto;
+}
+
+.state {
+    background: white;
+    border-radius: 20rpx;
+    padding: 20rpx;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20rpx;
+}
+
+.address {
+    padding: 20rpx;
+    background: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-radius: 20rpx;
+    margin-bottom: 20rpx;
+}
+
+.address > .icon {
+    margin: 0 16rpx;
+}
+
+.address > .content {
+    flex: 1;
+    padding: 0 20rpx;
+}
+
+.address > .content .name {
+    font-size: 30rpx;
+    margin-right: 20rpx;
+}
+
+.address > .content .phone {
+    color: #666;
+}
+
+.content {
+    background: white;
+    border-radius: 20rpx;
+    padding: 20rpx;
+    margin-bottom: 20rpx;
+}
+
+.content .title-s {
+    width: 150rpx;
+    text-align: right;
+}
+
+.content > .product {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20rpx;
+}
+
+.content > .product > image {
+    width: 150rpx;
+    height: 140rpx;
+    flex-shrink: 0;
+    border-radius: 6rpx;
+}
+
+.content > .product > .detail {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 0 26rpx;
+}
+
+.content > .product > .detail > .title {
+    margin-bottom: 10rpx;
+}
+
+.content > .product > .detail > .prop {
+    color: #666;
+}
+
+.content > .product > .price {
+    font-size: 28rpx;
+}
+
+.content > .count,
+.content > .total,
+.content > .delivery {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 20rpx 20rpx 0 0;
+}
+
+.content > .count,
+.content > .total {
+    justify-content: space-between;
+}
+
+.content > .delivery .way {
+    color: #999;
+    margin-left: 20rpx;
+}
+
+.content > .remark {
+    display: flex;
+    flex-direction: row;
+    padding: 20rpx 20rpx 0 0;
+}
+
+.content > .remark > text {
+    flex-shrink: 0;
+}
+
+.content > .remark > .textarea {
+    flex: 1;
+    margin-left: 20rpx;
+    color: #999;
+}
+
+.pay-way {
+    background: white;
+    border-radius: 20rpx;
+    margin-bottom: 20rpx;
+    padding: 20rpx;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.pay-way > .way {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.pay-way > .way > iconfont {
+    margin-right: 10rpx;
+}
+
+
+.pay-way > .price {
+    font-size: 30rpx;
+}
+
+.detail {
+    background: white;
+    border-radius: 20rpx;
+    padding: 20rpx;
+    display: flex;
+    flex-direction: column;
+    color: #666;
+}
+
+.detail > .line {
+    height: 50rpx;
+    line-height: 50rpx;
+}
+
+.detail > .line > .title {
+    margin-right: 10rpx;
+}
+
+.detail > .line > .snapshoot {
+    border-bottom: 1px solid #ccc;
+    margin-right: 10rpx;
+}
+
+.pay-button {
+    height: 80rpx;
+    line-height: 80rpx;
+    margin: 40rpx 20rpx 30rpx 20rpx;
+    text-align: center;
+    background: var(--c1);
+    color: white;
+    border-radius: 40rpx;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.cancel-button {
+    margin: 0 20rpx 40rpx 20rpx;
+    text-align: center;
+    color: #999;
+    flex-shrink: 0;
+}

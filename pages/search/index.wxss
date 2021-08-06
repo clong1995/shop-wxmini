@@ -1,0 +1,21 @@
+.app-padding{
+    padding-top: 24rpx;
+}
+.history, .find {
+    padding: 10rpx 0;
+    overflow: hidden;
+    margin-bottom: 10rpx;
+}
+
+.history > text, .find > text {
+    float: left;
+    margin:6rpx;
+}
+.history > text{
+    border-radius: 24rpx;
+    border: 1px solid #ccc;
+    padding: 4rpx 24rpx;
+}
+.find > text{
+    padding: 4rpx 10rpx;
+}
