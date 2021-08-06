@@ -1,6 +1,5 @@
 {
   "pages": [
-    "pages/mine/index",
     "pages/index/index",
     "pages/cart/tab/index",
     "pages/cart/mine/index",
@@ -9,6 +8,7 @@
     "pages/search/index",
     "pages/search/product_list/index",
     "pages/classify/index",
+    "pages/mine/index",
     "pages/mine/order/index",
     "pages/mine/order/detail/index",
     "pages/mine/order/detail/snapshoot/index",

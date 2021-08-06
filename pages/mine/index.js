@@ -119,12 +119,12 @@ Page({
         if (index !== undefined) {
             const id = this.data.order[index].id;
             let query = "";
-            if (id !== undefined) {
-                query = "?id=" + id;
-                url = "/pages/mine/order/index" + query
-            } else {
+            if (id === "gwc") {
                 //购物车
                 url = "/pages/cart/mine/index"
+            } else {
+                query = "?id=" + id;
+                url = "/pages/mine/order/index" + query
             }
         }
         wx.navigateTo({
