@@ -38,6 +38,7 @@ Page({
     onLoad: function (options) {
         pageTitle.setTitle(pageTitle.mine.child.order);
         const id = options.id ? parseInt(options.id, 10) : this.data.order_list[0].id;
+        //const id = 3;
         let index = this.idToIndex(id);
         if (index === 0) {
             this.loadData(id);
@@ -70,8 +71,8 @@ Page({
                 }
             }
         })
-
     },
+    //详情
     clickDetail(e) {
         const id = e.currentTarget.dataset.id;
         wx.navigateTo({
@@ -92,7 +93,7 @@ Page({
             });
         }
     },
-
+    //支付
     clickPayButton(e) {
         const id = e.currentTarget.dataset.id;
         //提交订单
@@ -111,6 +112,31 @@ Page({
             });
         })
     },
+    //确认收货
+    clickReceive(e){
+        const id = e.currentTarget.dataset.id;
+        ajax("/order/modify2", {
+            data: {
+                id: id,
+            },
+            success: (res) => {
+                if (res.state === "OK") {
+                    let dIndex = this.idToIndex(3);
+                    let index = 0;
+                    this.data.order_list[dIndex].child.some((v,i)=>{
+                        if (v.id === id){
+                            index = i;
+                            return true
+                        }
+                    });
+                    const key = "order_list[" + dIndex + "].child[" + index + "].delete";
+                    this.setData({
+                        [key]: true
+                    });
+                }
+            }
+        })
+    },
     idToIndex(id) {
         let index = 0;
         this.data.order_list.some((v, i) => {
@@ -120,5 +146,11 @@ Page({
             }
         });
         return index;
-    }
+    },
+    navigatorToLogistics(e) {
+        const id = e.currentTarget.dataset.id;
+        wx.navigateTo({
+            url: "/pages/mine/order/logistics/index?id=" + id
+        })
+    },
 });

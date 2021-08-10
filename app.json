@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/mine/order/comment/index",
     "pages/index/index",
     "pages/cart/tab/index",
     "pages/cart/mine/index",
@@ -12,6 +13,7 @@
     "pages/mine/order/index",
     "pages/mine/order/detail/index",
     "pages/mine/order/detail/snapshoot/index",
+    "pages/mine/order/logistics/index",
     "pages/consignee/index",
     "pages/consignee/add/index",
     "pages/product/index",

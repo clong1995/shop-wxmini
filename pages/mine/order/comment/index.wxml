@@ -1,0 +1,35 @@
+<view class="images">
+    <view wx:for="{{images}}" wx:key="index" class="image">
+        <view class="delete" bind:tap="clickDelete" data-index="{{index}}">✕</view>
+        <image mode="aspectFit" src="{{item}}"/>
+    </view>
+    <view class="add-image" bind:tap="chooseImage">
+        <iconfont icon="icon-tupian" fontSize="64rpx" color="#666"/>
+        <text>还可添加 {{max - images.length}} 张</text>
+    </view>
+</view>
+<view class="content">
+    <view class="line">
+        <text class="title">总和评分</text>
+        <view class="value grade">
+            <block wx:for="{{[1,2,3,4,5]}}" wx:key="index">
+                <text wx:if="{{item<=grade}}" style="color:var(--c4)" data-grade="{{item}}"
+                      bind:tap="clickGrade">★</text>
+                <text wx:else data-grade="{{item}}" bind:tap="clickGrade">☆</text>
+            </block>
+        </view>
+    </view>
+    <view class="line">
+        <text class="title">猜你想说</text>
+        <view class="value phrase">
+            <view class="item" wx:for="{{phrase}}" wx:key="index">
+                {{item}}
+            </view>
+        </view>
+    </view>
+    <view class="textarea">
+        <textarea placeholder="您的使用感受"/>
+    </view>
+    <view class="button">提交评价</view>
+</view>
+<uploadImage id="uploadImage"/>

@@ -23,7 +23,7 @@ Page({
     },
     onLoad: function (options) {
         this.id = options.id;
-        // this.id = "ABAAK4HjiRM";
+        this.id = "ABAAK4HjiRM";
         const prop = options.prop === "true";
         ajax("/mixture/product", {
             data: {

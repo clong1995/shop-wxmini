@@ -76,6 +76,10 @@
         <view class="line">
             <text class="title">快递单号:</text>
             <text>{{express_number || "暂无"}}</text>
+            <block wx:if="{{express_number}}">
+                <text class="logistics" bind:tap="navigatorToLogistics">查看物流</text>
+                <iconfont icon="icon-ccgl-yundanguanli-1" color="#666"/>
+            </block>
         </view>
         <view class="line">
             <text class="title">下单时间:</text>

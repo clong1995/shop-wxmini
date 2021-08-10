@@ -1,6 +1,6 @@
 @font-face {
     font-family: "iconfont"; /* Project id 2356965 */
-    src: url('//at.alicdn.com/t/font_2356965_0t43ui39f3p.woff2?t=1626254253974') format('woff2');
+    src: url('//at.alicdn.com/t/font_2356965_v15ojj7cgzo.woff2?t=1626254253974') format('woff2');
 }
 
 .iconfont {
@@ -9,6 +9,14 @@
     font-style: normal;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-tupian:before {
+    content: "\e639";
+}
+
+.icon-guizi:before {
+    content: "\e64f";
 }
 
 .icon-gouwu:before {

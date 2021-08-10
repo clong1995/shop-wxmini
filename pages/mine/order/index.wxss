@@ -48,8 +48,9 @@ page, .container {
 
 .inner > image {
     width: 240rpx;
-    height: 240rpx;
+    height: auto;
     flex-shrink: 0;
+    border-radius: 4rpx;
 }
 
 .inner > .content {
@@ -61,6 +62,16 @@ page, .container {
 .inner > .content >.prop{
     margin-top: 10rpx;
     color:#666;
+}
+
+.inner > .content >.attn{
+    color: #00a400;
+    font-size: 24rpx;
+}
+
+.inner > .content >.attn text{
+    font-weight: bold;
+    font-size: 30rpx;
 }
 
 .inner > .content >.price{
@@ -89,4 +100,9 @@ page, .container {
 .inner > .content >.buttons >.pay{
     background: var(--c1);
     color:white;
+}
+
+.inner > .content >.buttons >.commented{
+    border: 2rpx solid var(--c1);
+    color:var(--c1);
 }

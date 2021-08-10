@@ -5,11 +5,14 @@ const page = require('../../../../utils/page');
 const orderStorage = require('../../../../storage/order');
 Page({
     id: "",
-    data: {},
+    data: {
+        count:0,
+        price:0,
+    },
     onLoad: function (options) {
         pageTitle.setTitle(pageTitle.mine.child.order.child.detail);
         this.id = options.id;
-        // this.id = "ABBAXc4krxM";
+        //this.id = "ABCAuV-UwRM";
         ajax("/order/get1", {
             data: {
                 id: this.id,
@@ -27,6 +30,11 @@ Page({
     navigateToSnapshoot() {
         wx.navigateTo({
             url: "/pages/mine/order/detail/snapshoot/index?id=" + this.id
+        })
+    },
+    navigatorToLogistics() {
+        wx.navigateTo({
+            url: "/pages/mine/order/logistics/index?id=" + this.id
         })
     },
     clickRemove() {

@@ -146,11 +146,6 @@ page {
     margin-right: 10rpx;
 }
 
-
-.pay-way > .price {
-    font-size: 30rpx;
-}
-
 .detail {
     background: white;
     border-radius: 20rpx;
@@ -172,6 +167,11 @@ page {
 .detail > .line > .snapshoot {
     border-bottom: 1px solid #ccc;
     margin-right: 10rpx;
+}
+
+.detail > .line > .logistics {
+    border-bottom: 1px solid #ccc;
+    margin:0 10rpx;
 }
 
 .pay-button {

@@ -52,6 +52,12 @@ module.exports = {
                                 }
                             }
                         }
+                    },
+                    logistics: {
+                        page: "物流",
+                    },
+                    comment: {
+                        page: "发表评价",
                     }
                 }
             }

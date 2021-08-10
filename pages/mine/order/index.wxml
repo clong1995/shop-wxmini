@@ -18,28 +18,35 @@
                   wx:for-item="item1"
                   wx:for-index="index1"
                   wx:key="index"
-                  wx:if="{{item1.id}}"
             >
                 <image mode="aspectFill" src="{{item1.cover}}"/>
                 <view class="content">
                     <view class="title">{{item1.title}}</view>
                     <view class="prop">{{item1.prop}}</view>
+                    <view class="attn" wx:if="{{order_list[index].id===3}}">
+                        <!--待收货-->
+                        <view wx:if="{{item1.receipt_number}}">取件码: <text>{{item1.receipt_number}}</text></view>
+                        <view wx:if="{{item1.receipt_address}}">代收点: {{item1.receipt_address}}</view>
+                    </view>
                     <view style="flex:1;"></view>
                     <view class="price">共 {{item1.count}} 件,实付: ¥{{item1.price * item1.count / 100}}</view>
                     <view class="buttons">
                         <text class="detail" data-id="{{item1.id}}" bind:tap="clickDetail">详情</text>
                         <block wx:if="{{order_list[index].id===3}}">
                             <!--待收货-->
-                            <text class="delivery">物流</text>
-                            <text class="receive">确认收货</text>
+                            <text class="delivery" data-id="{{item1.id}}" bind:tap="navigatorToLogistics">物流</text>
+                            <text wx:if="{{item1.delete}}"  class="receive" data-id="{{item1.id}}">去评价</text>
+                            <text wx:else class="receive" data-id="{{item1.id}}" bind:tap="clickReceive">确认收货</text>
                         </block>
                         <block wx:elif="{{order_list[index].id===1}}">
                             <!--待付款-->
-                            <text class="pay" data-id="{{item1.id}}" bind:tap="clickPayButton">付款</text>
+                            <text wx:if="{{item1.delete}}" class="app-disable">已付款</text>
+                            <text wx:else class="pay" data-id="{{item1.id}}" bind:tap="clickPayButton">付款</text>
                         </block>
                         <block wx:elif="{{order_list[index].id===4}}">
                             <!--待评价-->
-                            <text class="comment">去评价</text>
+                            <text wx:if="{{item1.delete}}" class="commented">查看评价</text>
+                            <text wx:else class="comment">去评价</text>
                         </block>
                         <block wx:elif="{{order_list[index].id===2}}">
                             <!--待发货-->

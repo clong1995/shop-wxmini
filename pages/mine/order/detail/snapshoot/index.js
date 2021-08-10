@@ -18,7 +18,7 @@ Page({
     onLoad: function (options) {
         pageTitle.setTitle(pageTitle.mine.child.order.child.detail.child.snapshoot);
         this.id = options.id;
-        // this.id = "ABCApO8YqhM";
+        //this.id = "ABBAelcFvxM";
         ajax("/order/get2", {
             data: {
                 id: this.id
