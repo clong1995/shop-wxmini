@@ -82,6 +82,10 @@ Page({
                     wx.switchTab({
                         url: '/pages/index/index'
                     })
+
+                    /*wx.navigateTo({
+                        url: "/pages/mine/order/comment/index",
+                    })*/
                 }
             },
             complete: () => {

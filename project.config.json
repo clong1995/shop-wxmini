@@ -39,7 +39,7 @@
     "showES6CompileOption": false
   },
   "compileType": "miniprogram",
-  "libVersion": "2.19.0",
+  "libVersion": "2.19.1",
   "appid": "wx7c1d7447179ffa1c",
   "projectname": "shop-wxmini",
   "debugOptions": {

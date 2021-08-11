@@ -1,4 +1,4 @@
-<view style="overflow: hidden;height: 0;">
+<view class="container">
     <canvas id="imageCanvas" style="width: {{cw}}px; height: {{ch}}px;" canvas-id="imageCanvas"/>
 </view>
 

@@ -9,6 +9,9 @@ Page({
         phrase: ["五福周到", "好吃", "包装好", "分量足", "物流亏", "无指导书", "树梢呢"],
     },
     onLoad: function (options) {
+
+
+
         pageTitle.setTitle(pageTitle.mine.child.order.child.comment);
         this.id = options.id;
         // this.id = "ABBAelcFvxM";
@@ -36,11 +39,11 @@ Page({
             return;
         }
         const uploadImage = this.selectComponent('#uploadImage');
-        uploadImage.upload(375, 667, res => {
+        uploadImage.upload(750, 1335, res => {
             const key = "images[" + length + "]";
             this.setData({
-                [key]: res.tempFilePath
-            })
+                [key]: res
+            });
         });
     },
     clickDelete(e) {
