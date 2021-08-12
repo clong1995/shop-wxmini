@@ -11,6 +11,10 @@ Component({
                     sizeType: ['original'],
                     sourceType: ['album', 'camera'],
                     success(chooseImage) {
+                        wx.showLoading({
+                            mask: true,
+                            title: '请稍后',
+                        });
                         console.log("chooseImage success");
                         let ratio = 0;
                         const size = chooseImage.tempFiles[0].size;
@@ -41,85 +45,79 @@ Component({
                                     });
                                     const ctx = wx.createCanvasContext('imageCanvas', _this);
 
-                                    ctx.clearRect(0, 0, targetWidth, targetHeight);
-
                                     ctx.drawImage(path, 0, 0, targetWidth, targetHeight);
 
-                                    wx.getSystemInfo({
-                                        success(systemInfo) {
-                                            if (systemInfo.platform !== "devtools") {
-                                                ctx.draw(); //模拟器打开不会执行了，真机必须打开，不然绘制有问题。
-                                            }
-                                            ctx.draw(true, () => {
-                                                wx.canvasToTempFilePath({
-                                                    width: targetWidth,
-                                                    height: targetHeight,
-                                                    destWidth: targetWidth,
-                                                    destHeight: targetHeight,
-                                                    fileType: "jpg",
-                                                    canvasId: 'imageCanvas',
-                                                    quality: quality,
-                                                    success: (canvasToTempFilePath) => {
-                                                        console.log("canvasToTempFilePath success");
-                                                        //console.log(canvasToTempFilePath);
-                                                        /*wx.getImageInfo({
-                                                            src: canvasToTempFilePath.tempFilePath,
-                                                            success(ciInfo) {
-                                                                console.log(ciInfo.width);
-                                                                console.log(ciInfo.height);
+                                    ctx.draw(false, () => {
+                                        /*wx.getImageInfo({
+                                            src: path,
+                                            success(ciInfo) {
 
+                                            },
+                                            fail(ciInfo) {
+                                                complete(ciInfo);
+                                                console.error("ciInfo fail");
+                                                console.error(ciInfo);
+                                                if (typeof fail == "function") {
+                                                    fail(ciInfo);
+                                                }
+                                            },
+                                            complete(ciInfo) {
+                                                wx.hideLoading();
+                                                console.log("ciInfo complete");
+                                                if (typeof ciInfo == "function") {
+                                                }
+                                            }
+                                        })*/
+
+                                        setTimeout(()=>{
+                                            wx.canvasToTempFilePath({
+                                                width: targetWidth,
+                                                height: targetHeight,
+                                                destWidth: targetWidth,
+                                                destHeight: targetHeight,
+                                                fileType: "jpg",
+                                                canvasId: 'imageCanvas',
+                                                quality: quality,
+                                                success: (canvasToTempFilePath) => {
+                                                    console.log("canvasToTempFilePath success");
+                                                    //console.log(canvasToTempFilePath);
+                                                    _this.putOss(canvasToTempFilePath.tempFilePath, targetWidth + "_" + targetHeight,
+                                                        putOss => {
+                                                            success(putOss);
+                                                        },
+                                                        (putOss) => {
+                                                            wx.hideLoading();
+                                                            console.error("putOss fail");
+                                                            console.error(putOss);
+                                                            if (typeof fail == "function") {
+                                                                fail(putOss);
                                                             }
-                                                        })*/
+                                                        },
+                                                        (putOss) => {
+                                                            console.log("putOss complete");
+                                                            if (typeof complete == "function") {
+                                                                complete(putOss);
+                                                            }
+                                                        });
 
-                                                        _this.putOss(canvasToTempFilePath.tempFilePath, targetWidth + "_" + targetHeight,
-                                                            putOss => {
-                                                                success(putOss);
-                                                            },
-                                                            (putOss) => {
-                                                                console.error("putOss fail");
-                                                                console.error(putOss);
-                                                                if (typeof fail == "function") {
-                                                                    fail(putOss);
-                                                                }
-                                                            },
-                                                            (putOss) => {
-                                                                console.log("putOss complete");
-                                                                if (typeof complete == "function") {
-                                                                    complete(putOss);
-                                                                }
-                                                            });
-
-                                                    },
-                                                    fail(canvasToTempFilePath) {
-                                                        console.error("draw fail");
-                                                        console.error(canvasToTempFilePath);
-                                                        if (typeof fail == "function") {
-                                                            fail(canvasToTempFilePath);
-                                                        }
-                                                    },
-                                                    complete(canvasToTempFilePath) {
-                                                        console.log("draw complete");
-                                                        if (typeof complete == "function") {
-                                                            complete(canvasToTempFilePath);
-                                                        }
+                                                },
+                                                fail(canvasToTempFilePath) {
+                                                    wx.hideLoading();
+                                                    console.error("draw fail");
+                                                    console.error(canvasToTempFilePath);
+                                                    if (typeof fail == "function") {
+                                                        fail(canvasToTempFilePath);
                                                     }
-                                                }, _this)
-                                            });
-                                        },
-                                        fail(systemInfo) {
-                                            console.error("getSystemInfo fail");
-                                            console.error(systemInfo);
-                                            if (typeof fail == "function") {
-                                                fail(systemInfo);
-                                            }
-                                        },
-                                        complete(systemInfo) {
-                                            console.log("getSystemInfo complete");
-                                            if (typeof complete == "function") {
-                                                complete(systemInfo);
-                                            }
-                                        }
-                                    })
+                                                },
+                                                complete(canvasToTempFilePath) {
+                                                    console.log("draw complete");
+                                                    if (typeof complete == "function") {
+                                                        complete(canvasToTempFilePath);
+                                                    }
+                                                }
+                                            }, _this)
+                                        },100)
+                                    });
                                 } else {
                                     //不用压缩
                                     // 压缩成功，上传
@@ -128,6 +126,7 @@ Component({
                                             success(putOss);
                                         },
                                         (putOss) => {
+                                            console.log("putOss complete");
                                             console.error("putOss fail");
                                             console.error(putOss);
                                             if (typeof fail == "function") {
@@ -135,7 +134,7 @@ Component({
                                             }
                                         },
                                         (putOss) => {
-                                            console.log("putOss complete");
+                                            wx.hideLoading();
                                             if (typeof complete == "function") {
                                                 complete(putOss);
                                             }
@@ -143,6 +142,7 @@ Component({
                                 }
                             },
                             fail(imageInfo) {
+                                wx.hideLoading();
                                 console.error("imageInfo fail");
                                 console.error(imageInfo);
                                 if (typeof fail == "function") {
@@ -156,9 +156,9 @@ Component({
                                 }
                             }
                         })
-
                     },
                     fail(chooseImage) {
+                        wx.hideLoading();
                         console.error("chooseImage fail");
                         console.error(chooseImage);
                         if (typeof fail == "function") {
@@ -186,6 +186,7 @@ Component({
                         const data = ajaxRes.data;
                         const upload_url = data["upload_url"];
                         //上传文件
+                        //TODO 真机预览不开启调试台无法上传，原因是没有配置合法域名
                         let uploadTask = wx.uploadFile({
                             url: upload_url["url"],
                             filePath: tempFilePath,
@@ -219,6 +220,7 @@ Component({
                                 }
                             },
                             complete: uploadTaskRes => {
+                                wx.hideLoading();
                                 console.log("uploadTask complete");
                                 if (typeof complete == "function") {
                                     complete(uploadTaskRes);
@@ -241,6 +243,7 @@ Component({
                     }
                 },
                 fail: (ajaxRes) => {
+                    wx.hideLoading();
                     console.error("ajax fail");
                     console.error(ajaxRes);
                     if (typeof fail == "function") {

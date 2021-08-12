@@ -33,18 +33,6 @@ page {
     height: 100%;
 }
 
-.images > .image > .delete {
-    position: absolute;
-    top: -10rpx;
-    right: -10rpx;
-    background: #ccc;
-    width: 40rpx;
-    height: 40rpx;
-    text-align: center;
-    line-height: 40rpx;
-    border-radius: 50%;
-}
-
 .content {
     flex-shrink: 0;
     padding: 15rpx 15rpx calc(env(safe-area-inset-bottom) / 2 + 24rpx) 15rpx;
@@ -72,40 +60,8 @@ page {
     color: #cccccc;
 }
 
-.content > .line > .value.phrase {
-    overflow-y: hidden;
-    overflow-x: auto;
-    white-space: nowrap;
-}
-
-.content > .line > .value.phrase > .item {
-    display: inline-block;
-    border: 1px solid #efefef;
-    padding: 4rpx 20rpx;
-    background: white;
-    margin-right: 10rpx;
-    border-radius: 4rpx;
-}
-
 .content > .textarea {
-    height: 150rpx;
-    border: 1px solid #efefef;
     margin-bottom: 20rpx;
     background: white;
     padding: 10rpx;
-}
-
-.content > .textarea >textarea{
-    width: 100%;
-    height: 100%;
-}
-
-.content > .button {
-    width: 100%;
-    height: 75rpx;
-    border-radius: 8rpx;
-    background: var(--c4);
-    text-align: center;
-    line-height: 75rpx;
-    color: white;
 }

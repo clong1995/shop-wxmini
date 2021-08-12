@@ -147,10 +147,40 @@ Page({
         });
         return index;
     },
+    //物流
     navigatorToLogistics(e) {
         const id = e.currentTarget.dataset.id;
         wx.navigateTo({
             url: "/pages/mine/order/logistics/index?id=" + id
         })
     },
+    //评价
+    navigatorToComment(e) {
+        const id = e.currentTarget.dataset.id;
+        wx.navigateTo({
+            url: "/pages/mine/order/comment/index?id=" + id
+        })
+    },
+    //查看评价
+    navigatorToShowComment(e) {
+        const id = e.currentTarget.dataset.id;
+        wx.navigateTo({
+            url: "/pages/mine/order/comment_detail/index?id=" + id
+        })
+    },
+    commented(id){
+        //设置已评价状态
+        const dIndex = this.idToIndex(4);
+        let index = 0;
+        this.data.order_list[dIndex].child.some((v,i)=>{
+            if (v.id === id){
+                index = i;
+                return true
+            }
+        });
+        const key = "order_list[" + dIndex + "].child[" + index + "].delete";
+        this.setData({
+            [key]: true
+        });
+    }
 });

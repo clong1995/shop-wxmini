@@ -45,8 +45,8 @@
                         </block>
                         <block wx:elif="{{order_list[index].id===4}}">
                             <!--待评价-->
-                            <text wx:if="{{item1.delete}}" class="commented">查看评价</text>
-                            <text wx:else class="comment">去评价</text>
+                            <text wx:if="{{item1.delete}}" class="commented" data-id="{{item1.id}}" bind:tap="navigatorToShowComment">查看评价</text>
+                            <text wx:else class="comment" data-id="{{item1.id}}" bind:tap="navigatorToComment">去评价</text>
                         </block>
                         <block wx:elif="{{order_list[index].id===2}}">
                             <!--待发货-->
@@ -56,6 +56,7 @@
                         </block>
                         <block wx:elif="{{order_list[index].id===6}}">
                             <!--已完成-->
+                            <text class="commented" data-id="{{item1.id}}" bind:tap="navigatorToShowComment">查看评价</text>
                         </block>
                     </view>
                 </view>

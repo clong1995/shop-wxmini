@@ -66,6 +66,9 @@ module.exports = {
     classify: {
         page: "分类"
     },
+    comment: {
+        page: "礼物评价"
+    },
     search: {
         page: "",
         title: {

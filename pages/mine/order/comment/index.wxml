@@ -22,14 +22,14 @@
     <view class="line">
         <text class="title">猜你想说</text>
         <view class="value phrase">
-            <view class="item" wx:for="{{phrase}}" wx:key="index">
+            <view class="item" wx:for="{{phrase}}" wx:key="index" data-index="{{index}}" bind:tap="clickPhrase">
                 {{item}}
             </view>
         </view>
     </view>
     <view class="textarea">
-        <textarea placeholder="您的使用感受"/>
+        <textarea placeholder="您的使用感受" value="{{content}}" bind:input="contentInput"/>
     </view>
-    <view class="button">提交评价</view>
+    <view class="button" bind:tap="clickSubmit">提交评价</view>
 </view>
 <uploadImage id="uploadImage"/>
