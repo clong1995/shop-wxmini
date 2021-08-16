@@ -1,4 +1,11 @@
-<view class="container">
+<!--
+
     <canvas id="imageCanvas" style="width: {{cw}}px; height: {{ch}}px;" canvas-id="imageCanvas"/>
 </view>
-
+-->
+<view class="container">
+    <canvas
+            type="2d"
+            id="myCanvas"
+    ></canvas>
+</view>

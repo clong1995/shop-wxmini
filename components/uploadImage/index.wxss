@@ -1,9 +1,9 @@
 .container{
     position: relative;
+    overflow: hidden;
 }
-.container > canvas{
+canvas{
     position: absolute;
     z-index: -1;
-    bottom: -999px;
-    right: -999px;
+    left: -300px;
 }

@@ -1,6 +1,6 @@
 module.exports = {
     // server: "https://proxy.jyyf.tech",
-    server: "http://172.20.10.5",
+    server: "http://192.168.31.177",
     //region:"oss-cn-beijing",
     //bucket:"public-community"
 }

@@ -41,7 +41,7 @@ Page({
             return;
         }
         const uploadImage = this.selectComponent('#uploadImage');
-        uploadImage.upload(750, 1335, res => {
+        uploadImage.upload(375, 667, res => {
             const key = "images[" + length + "]";
             this.setData({
                 [key]: res
