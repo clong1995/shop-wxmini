@@ -90,7 +90,7 @@ Page({
                     page.getPage("mine/order").commented(this.id);
                     //返回
                     wx.navigateBack({
-                        delta: 2
+                        delta: 1
                     });
                 }
             }

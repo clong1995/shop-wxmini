@@ -1,24 +1,20 @@
 <view wx:if="{{express_company}}" class="head">
     <iconfont icon="icon-guizi" color="var(--black45)" fontSize="60rpx"/>
     <view class="content">
-        <view class="code">取件码 {{receipt_number ? receipt_number : '暂无'}}</view>
+        <view class="code">{{receipt}}</view>
         <view class="address">{{receipt_address}}</view>
         <view class="logistics">{{express_company}}: {{express_number}}</view>
         <view class="user">收件人: {{name}} {{phone}}</view>
     </view>
-    <text wx:if="{{state===3}}" class="receive" bind:tap="clickReceive">确认收货</text>
-    <text wx:elif="{{state===4}}" class="comment" bind:tap="navigatorToCommon">去评价</text>
+    <text wx:if="{{order_state === 3}}" class="receive" bind:tap="clickReceive">确认收货</text>
+    <text wx:elif="{{order_state === 4}}" class="comment" bind:tap="navigatorToCommon">去评价</text>
     <text wx:else class="received">已签收</text>
 </view>
-<scroll-view scroll-y="true" wx:if="{{schedule.length>0}}">
-    <view class="line" wx:for="{{list}}" wx:key="index">
+<scroll-view scroll-y="true" wx:if="{{traces.length>0}}">
+    <view class="line" wx:for="{{traces}}" wx:key="index">
         <view class="circle"></view>
-        <view class="date">
-            2021-08-07 01:51:15
-        </view>
-        <view class="content">
-            【揭阳市】 快件离开 【潮汕中心】 已发往 【青岛中专部】
-        </view>
+        <view class="date">{{item.time}}</view>
+        <view class="content">{{item.station}}</view>
     </view>
 </scroll-view>
 <view wx:else class="empty">暂无快递消息</view>

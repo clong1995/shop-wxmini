@@ -6,7 +6,7 @@ Page({
         pageTitle.setTitle(pageTitle.product.child.comment);
         ajax("/comment/list", {
             data: {
-                id: options.id
+                id: "ABAAK4HjiRM"//options.id
             },
             success: (res) => {
                 if (res.state === "OK") {
